@@ -1,0 +1,708 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 16px;
+    width: 100%;
+}
+
+:root {
+    /* Default dark mode variables */
+    --nav-bg: #1f2233;
+    --nav-color: rgb(192, 192, 192); 
+    --nav-hover-color: aliceblue;
+    --text-color: #eef2f7;
+    --icon-hover-bg: rgba(255,255,255,0.15);
+    --heading-color: antiquewhite;
+    --border-color: rgb(55, 54, 67);
+    --download-cv-bg-color: rgb(9, 189, 224);
+    --marva-gradient-start: rgb(251, 251, 251);
+    --marva-gradient-end: rgb(178, 178, 225);
+    --afzal-gradient-start: rgb(177, 163, 211);
+    --afzal-gradient-end: rgb(64, 64, 128);
+    --skill-span: rgb(19, 116, 201);
+    --skill-span-border-color: rgb(138, 168, 245);
+    --image-color: rgb(107, 134, 219);
+    --paragraph-color: grey;
+    --social-media-color: azure;
+    --social-media-background-color: rgb(32, 48, 63);
+    --social-media-hover-color: rgb(107, 134, 219);
+    --html-color: rgb(55, 74, 123);
+    --html-bg-color: rgb(46, 45, 70);
+    --html-icon-bg-color: rgb(8, 200, 225);
+    --html-h1-color: rgb(255, 255, 255);
+    --html-p-color: rgb(147, 157, 165);
+    --job-description-color: rgb(148, 244, 244);
+    --recruiter-job-border: rgb(9, 57, 71);
+    --recruiter-job-bg: rgb(47, 45, 63);
+    --box-text-color: white;
+    --recruiter-button-color: azure;
+    --recruiter-button-bg-color: aqua;
+    --box-text-bg-color: rgb(42, 39, 53);
+    --download-p-color: rgb(187, 213, 234);
+    --footer-border-color: rgb(19, 54, 81);
+    --built-design-color: lightslategray;
+}
+
+/* Light mode variables */
+[data-theme="light"] {
+    --nav-bg: #f1f2f6;
+    --nav-color: rgb(82, 92, 97); 
+    --nav-hover-color: rgb(55, 56, 56);
+    --text-color: #303131;
+    --icon-hover-bg: rgba(255,255,255,0.15);
+    --heading-color: rgb(86, 86, 85);
+    --border-color: rgb(214, 214, 216);
+    --download-cv-bg-color: rgb(9, 189, 224);
+    --marva-gradient-start: rgb(14, 45, 92);
+    --marva-gradient-end: rgb(137, 137, 245);
+    --afzal-gradient-start: rgb(158, 140, 200);
+    --afzal-gradient-end: rgb(43, 43, 94);
+    --skill-span: rgb(19, 116, 201);
+    --skill-span-border-color: rgb(138, 168, 245);
+    --image-color: rgb(107, 134, 219);
+    --paragraph-color: grey;
+    --social-media-color: azure;
+    --social-media-background-color: rgb(32, 48, 63);
+    --social-media-hover-color: rgb(107, 134, 219);
+    --html-color: rgb(55, 74, 123);
+    --html-bg-color: rgb(46, 45, 70);
+    --html-icon-bg-color: rgb(8, 200, 225);
+    --html-h1-color: rgb(255, 255, 255);
+    --html-p-color: rgb(147, 157, 165);
+    --job-description-color: rgb(115, 117, 117);
+    --recruiter-job-border: rgb(219, 221, 222);
+    --recruiter-job-bg: rgb(255, 255, 255);
+    --box-text-color: white;
+    --recruiter-button-color: azure;
+    --recruiter-button-bg-color: rgb(141, 240, 240);
+    --box-text-bg-color: rgb(201, 200, 205);
+    --download-p-color: rgb(115, 117, 118);
+    --footer-border-color: rgb(223, 227, 229);
+    --built-design-color: rgb(134, 136, 138);
+}
+
+body {
+    padding: 0;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: sans-serif;
+    background: var(--nav-bg);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.edge-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.bar {
+    position: absolute;
+    background: linear-gradient(270deg,
+        #ff3cac,
+        #784ba0,
+        #2b86c5,
+        #3af2b1,
+        #ffe600,
+        #ff3cac
+    );
+    background-size: 600% 600%;
+    animation: moveGradient 4s linear infinite;
+}
+
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.bar-top {
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 0%;
+    border-radius: 0 0 8px 8px;
+    transform-origin: left center;
+}
+
+.bar-right {
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 0%;
+    border-radius: 8px 0 0 8px;
+    transform-origin: center top;
+}
+
+.bar-bottom {
+    bottom: 0;
+    right: 0;
+    height: 6px;
+    width: 0%;
+    border-radius: 8px 8px 0 0;
+    transform-origin: right center;
+}
+
+.bar-left {
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    height: 0%;
+    border-radius: 0 8px 8px 0;
+    transform-origin: center bottom;
+}
+
+#menu-icon {
+    display: none;
+    font-size: 20px;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    right: 50px;
+    top: 26px;
+}
+
+#theme-switch {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#theme-switch:hover {
+    background: var(--icon-hover-bg);
+}
+
+#theme-switch .lucide-sun { display: inline-block !important; }
+#theme-switch .lucide-moon { display: none !important; }
+
+html[data-theme="light"] #theme-switch .lucide-sun { display: none !important; }
+html[data-theme="light"] #theme-switch .lucide-moon { display: inline-block !important; }
+
+#roots {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 16px;
+}
+
+.main-header {
+    width: 99%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+}
+
+.logo {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.navbar a {
+    color: var(--nav-color);
+    font-size: 15px;
+    padding: 8px 30px;
+}
+
+.navbar a:hover {
+    color: var(--nav-hover-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.home {
+    height: auto;
+    padding: 128px 32px;
+    margin: 0 auto;
+}
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 0 16px;
+}
+
+.name-field h1 {
+    font-size: 90px;
+    color: var(--heading-color);
+    gap: 10px;
+}
+
+.marva {
+    background: linear-gradient(to right, var(--marva-gradient-start), var(--marva-gradient-end));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.afzal {
+    background: linear-gradient(to right, var(--afzal-gradient-start), var(--afzal-gradient-end));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name-field p {
+    font-size: 30px;
+    color: var(--heading-color);
+    padding: 20px 30px;
+    word-spacing: 2px;
+}
+
+.skills span {
+    border: 1px solid var(--skill-span-border-color);
+    border-radius: 20px;
+    color: var(--skill-span);
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.about {
+    height: auto;
+    padding: 120px 25px;
+    text-align: center;
+}
+
+.about h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 60px;
+    color: var(--nav-hover-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.direction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    position: relative;
+    width: 255px;
+    height: 245px;
+    border-radius: 50%;
+    border: 4px solid var(--image-color);
+    margin-bottom: 32px;
+}
+
+.paragraph p {
+    color: var(--paragraph-color);
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    padding-bottom: 40px;
+}
+
+.social-media a {
+    margin-right: 10px;
+    font-size: 30px;
+    color: var(--social-media-color);
+    background-color: var(--social-media-background-color);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-media a:hover {
+    background-color: var(--social-media-hover-color); 
+}
+
+.expertise {
+    height: auto;
+    padding: 150px 60px;
+    text-align: center;
+}
+
+.expertise h1 {
+    padding-bottom: 50px;
+    font-size: 60px;
+    color: var(--nav-hover-color);
+}
+
+.expertise-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.html, .css, .JavaScript {
+    padding: 24px;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    border-radius: 10px;
+    border: 1px solid var(--html-color); 
+    background-color: var(--html-bg-color);
+}
+
+.fa-html5, .fa-css3, .ri-javascript-fill {
+    color: var(--nav-hover-color);
+    font-size: 40px;
+    background-color: var(--html-icon-bg-color);
+    border-radius: 50px;
+    padding: 7px 5px;
+}
+
+.html h2, .css h2, .JavaScript h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--html-h1-color);
+    font-size: 25px;
+}
+
+.html p, .css p, .JavaScript p {
+    color: var(--html-p-color);
+    font-size: 16px;
+}
+
+.Recruiter_toolkit {
+    height: auto;
+    padding: 128px 50px;
+}
+
+.job_description h1 {
+    color: var(--nav-hover-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.job_description p {
+    text-align: center;
+    font-size: 20px;
+    color: var(--job-description-color);
+    margin-bottom: 32px;
+}
+
+.Recruiter-job-box {
+    margin: 0 auto;
+    padding: 24px;
+    width: 100%;
+    max-width: 672px;
+    height: auto;
+    min-height: 290px;
+    border-radius: 10px;
+    border: 1px solid var(--recruiter-job-border);
+    background-color: var(--recruiter-job-bg);
+}
+
+.box-text {
+    padding: 12px;
+    color: var(--box-text-color);
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    background-color: var(--box-text-bg-color);
+}
+
+.Recruiter-button {
+    width: 100%;
+    height: 60px;
+    color: var(--recruiter-button-color);
+    font-weight: bold;
+    background-color: var(--recruiter-button-bg-color);
+    margin-top: 16px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 10px;
+}
+
+.my_resume {
+    height: auto;
+    padding: 160px 32px;
+}
+
+.my_resume h1 {
+    color: var(--nav-hover-color);
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.download {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.download p {
+    color: var(--download-p-color);
+    font-size: 20px;
+}
+
+.download-cv {
+    width: 230px;
+    height: 55px;
+    margin-top: 32px;
+    display: inline-flex;
+    background-color: var(--download-cv-bg-color);
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+}
+
+.fa-download {
+    color: var(--nav-hover-color);
+    font-size: 28px;
+}
+
+.resume-button-design {
+    color: var(--nav-hover-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Contact {
+    height: auto;
+    padding: 160px 32px;
+}
+
+.Contact h1 {
+    color: var(--nav-hover-color);
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.Contact-us {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.Contact-us p {
+    color: var(--download-p-color);
+    font-size: 20px;
+}
+
+.start-conversation {
+    width: 260px;
+    height: 55px;
+    margin-top: 32px;
+    display: inline-flex;
+    background-color: var(--download-cv-bg-color);
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+}
+
+.fa-message {
+    color: var(--nav-hover-color);
+    font-size: 28px;
+}
+
+.start-button-design {
+    color: var(--nav-hover-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer-design {
+    width: 100%;
+    height: 80px;
+    padding: 30px 0;
+    border-top: 1px solid var(--footer-border-color);
+}
+
+.built-design p {
+    text-align: center;
+    font-size: 14px;
+    color: var(--built-design-color);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .name-field h1 {
+        font-size: 70px;
+    }
+    
+    .name-field p {
+        font-size: 24px;
+    }
+    
+    .about h1, .expertise h1, .job_description h1, 
+    .my_resume h1, .Contact h1 {
+        font-size: 48px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--nav-bg);
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 998;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+
+    .name-field h1 {
+        font-size: 48px;
+    }
+    
+    .name-field p {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+    
+    .skills span {
+        margin-bottom: 8px;
+    }
+    
+    .about h1, .expertise h1, .job_description h1, 
+    .my_resume h1, .Contact h1 {
+        font-size: 36px;
+    }
+    
+    .image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .paragraph p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .expertise-grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .Recruiter-job-box, .box-text, .Recruiter-button {
+        width: 100%;
+    }
+    
+    .download, .Contact-us {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name-field h1 {
+        font-size: 36px;
+    }
+    
+    .name-field p {
+        font-size: 18px;
+    }
+    
+    .skills span {
+        display: block;
+        margin: 5px auto;
+        width: fit-content;
+    }
+    
+    .about h1, .expertise h1, .job_description h1, 
+    .my_resume h1, .Contact h1 {
+        font-size: 28px;
+    }
+    
+    .download-cv, .start-conversation {
+        width: 100%;
+        max-width: 230px;
+    }
+}
