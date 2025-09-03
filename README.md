@@ -17,6 +17,6 @@ Contact Form – Easy way for visitors to reach me.
 
  Contact
 - Name: Marva Afzal  
-- Email: your-email@example.com  
-- LinkedIn: [Your LinkedIn Profile Link]  
-- GitHub: [Your GitHub Profile Link]
+- Email: afzalmarva@gmail.com
+- LinkedIn: www.linkedin.com/in/marva-webdev 
+- GitHub: https://github.com/MarvaAfzal
